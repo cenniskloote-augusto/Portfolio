@@ -1119,11 +1119,12 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       <button class="filter-btn">Automotive</button>
       <button class="filter-btn">Enterprise</button>
       <button class="filter-btn">Consumer</button>
+      <button class="filter-btn">Applied AI</button>
     </div>
 
     <div class="portfolio-grid">
       <!-- Amway Connected Products -->
-      <a href="amway-connected-products-case-study.html" class="project-card wide fade-up">
+      <a href="amway-connected-products-case-study.html" class="project-card wide fade-up" data-category="Connected Products">
         <img src="images/amway-sky.jpg" alt="Amway SKY connected product" class="project-card-image" width="1600" height="979" loading="lazy">
         <div class="project-card-overlay">
           <div class="project-card-category">Connected Products & Strategy</div>
@@ -1133,7 +1134,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       </a>
 
       <!-- Bissell -->
-      <div class="project-card fade-up">
+      <div class="project-card fade-up" data-category="Consumer">
         <div class="project-card-placeholder">Bissell Robot Vacuum — Image Coming Soon</div>
         <div class="project-card-overlay">
           <div class="project-card-category">Consumer IoT</div>
@@ -1143,7 +1144,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       </div>
 
       <!-- Automotive -->
-      <div class="project-card fade-up">
+      <div class="project-card fade-up" data-category="Automotive">
         <div class="project-card-placeholder">Automotive — Image Coming Soon</div>
         <div class="project-card-overlay">
           <div class="project-card-category">Automotive</div>
@@ -1153,7 +1154,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       </div>
 
       <!-- Enterprise -->
-      <div class="project-card wide fade-up">
+      <div class="project-card wide fade-up" data-category="Enterprise">
         <div class="project-card-placeholder">Enterprise Applications — Image Coming Soon</div>
         <div class="project-card-overlay">
           <div class="project-card-category">Enterprise</div>
@@ -1163,7 +1164,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       </div>
 
       <!-- Medallion -->
-      <div class="project-card fade-up">
+      <div class="project-card fade-up" data-category="Enterprise">
         <div class="project-card-placeholder">Medallion Instruments — Image Coming Soon</div>
         <div class="project-card-overlay">
           <div class="project-card-category">Instrumentation</div>
@@ -1173,7 +1174,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       </div>
 
       <!-- JCI Controls -->
-      <div class="project-card fade-up">
+      <div class="project-card fade-up" data-category="Enterprise">
         <div class="project-card-placeholder">JCI Controls — Image Coming Soon</div>
         <div class="project-card-overlay">
           <div class="project-card-category">Building Controls</div>
@@ -1183,7 +1184,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       </div>
 
       <!-- Stryker -->
-      <div class="project-card fade-up">
+      <div class="project-card fade-up" data-category="Medical">
         <div class="project-card-placeholder">Stryker Products — Image Coming Soon</div>
         <div class="project-card-overlay">
           <div class="project-card-category">Medical Devices</div>
@@ -1191,6 +1192,16 @@ h4 { font-size: 1.1rem; font-weight: 500; }
         </div>
         <div class="project-card-arrow">↗</div>
       </div>
+
+      <!-- Teaching Teams to Work Differently -->
+      <a href="teaching-teams-AI_casestudy.html" class="project-card wide fade-up" data-category="Applied AI">
+        <img src="images/01_Facilitate.png" alt="Teaching teams to work with AI" class="project-card-image" loading="lazy">
+        <div class="project-card-overlay">
+          <div class="project-card-category">Applied AI</div>
+          <div class="project-card-title">Teaching Teams to Work Differently</div>
+        </div>
+        <div class="project-card-arrow">↗</div>
+      </a>
     </div>
   </div>
 </section>
@@ -1553,11 +1564,15 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Filter buttons (visual toggle only for now)
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    const selected = btn.textContent.trim();
+    document.querySelectorAll('.project-card').forEach(card => {
+      const show = selected === 'All' || card.dataset.category === selected;
+      card.style.display = show ? '' : 'none';
+    });
   });
 });
 
