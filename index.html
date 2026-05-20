@@ -323,23 +323,6 @@ h4 { font-size: 1.1rem; font-weight: 500; }
 /* ============================================
    SCROLL-DOWN INDICATOR
    ============================================ */
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  animation: float 2.5s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
 
 /* ============================================
    ABOUT SECTION
@@ -764,6 +747,13 @@ h4 { font-size: 1.1rem; font-weight: 500; }
 @media (max-width: 768px) {
   .logos-fade { width: 60px; }
   .logo-item { padding: 0 24px; font-size: 1.05rem; }
+  .logos-track:hover { animation-play-state: running; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logos-track {
+    animation: none;
+  }
 }
 
 /* ============================================
@@ -1010,7 +1000,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
     <div class="hero-inner">
       <div class="hero-content fade-up">
         <div class="hero-eyebrow">Experience Designer · 2026</div>
-        <h1>Hello — <br>I'm Christy, <br>a design <em>leader</em></h1>
+        <h1>Hello, let's make complex work simpler <em>together</em>.</h1>
         <p class="hero-description">
           Natural optimist driven to find solutions to any design challenge, particularly those that traverse complex systems, together in a cross-functional team.
         </p>
@@ -1044,9 +1034,6 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       </div>
     </div>
   </div>
-  <div class="scroll-indicator">
-    Scroll down ↓
-  </div>
 </section>
 
 <!-- ==========================================
@@ -1073,7 +1060,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
           <div class="about-highlight">
             <div class="about-highlight-icon">◎</div>
             <h4>Human-Centered Design</h4>
-            <p>Industrial Design roots applied to UX — seeking out unmet needs and addressing them.</p>
+            <p>Industrial Design roots applied to UX, seeking out unmet needs and addressing them.</p>
           </div>
           <div class="about-highlight">
             <div class="about-highlight-icon">△</div>
@@ -1110,7 +1097,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
         <div class="section-label">Portfolio</div>
         <h2>Exploring My Design Portfolio<br>& Creative Solutions</h2>
       </div>
-      <p>From connected products and IoT to medical devices and automotive — multi-modal experiences across industries.</p>
+      <p>From connected products and IoT to medical devices and automotive, multi-modal experiences across industries.</p>
     </div>
 
     <div class="portfolio-filters fade-up">
@@ -1411,7 +1398,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
     <div class="fade-up" style="text-align: center; max-width: 640px; margin: 0 auto 0;">
       <div class="section-label">Services</div>
       <h2>What I Bring to the Table</h2>
-      <p style="color: var(--color-text-muted); margin-top: 16px;">From hands-on design leadership to strategic consulting — services tailored to where you are in your product journey.</p>
+      <p style="color: var(--color-text-muted); margin-top: 16px;">From hands-on design leadership to strategic consulting, services tailored to where you are in your product journey.</p>
     </div>
     <div class="services-grid">
       <div class="service-card fade-up">
@@ -1432,12 +1419,12 @@ h4 { font-size: 1.1rem; font-weight: 500; }
       <div class="service-card fade-up">
         <div class="service-icon">△</div>
         <h3>Connected Product Design</h3>
-        <p>Designing IoT and connected solutions that span hardware, software, and mobile — from embedded systems to cloud-connected consumer products.</p>
+        <p>Designing IoT and connected solutions that span hardware, software, and mobile, from embedded systems to cloud-connected consumer products.</p>
       </div>
       <div class="service-card fade-up" style="transition-delay: 0.1s;">
         <div class="service-icon">⬢</div>
         <h3>Design Operations</h3>
-        <p>Setting up design ops, methods, tools, and budgets — creating the infrastructure that lets creative teams do their best work sustainably.</p>
+        <p>Setting up design ops, methods, tools, and budgets, creating the infrastructure that lets creative teams do their best work sustainably.</p>
       </div>
       <div class="service-card fade-up" style="transition-delay: 0.2s;">
         <div class="service-icon">✦</div>
@@ -1456,7 +1443,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
     <div class="cta-card fade-up">
       <div class="section-label">Let's Work Together</div>
       <h2>Ready to Start Your Next Project?</h2>
-      <p>Whether you need design leadership, UX coaching, or connected product strategy — let's explore how I can help your team thrive.</p>
+      <p>Whether you need design leadership, UX coaching, or connected product strategy, let's explore how I can help your team thrive.</p>
       <a href="#contact" class="btn btn-accent">Let's Talk <span class="arrow">↗</span></a>
     </div>
   </div>
@@ -1493,7 +1480,7 @@ h4 { font-size: 1.1rem; font-weight: 500; }
         <div class="latticework-pillar">
           <div class="pillar-number">02</div>
           <h4>Design Advocacy</h4>
-          <p>Establish design's seat at the table — aligning leadership on the value of experience design.</p>
+          <p>Establish design's seat at the table, aligning leadership on the value of experience design.</p>
         </div>
         <div class="latticework-pillar">
           <div class="pillar-number">03</div>
